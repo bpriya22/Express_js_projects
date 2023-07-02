@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+</head>
+<body>
+    <form action="/task/" method="post" class="form">
+        <h1>Task Manager</h1>
+        <h3 style="font-weight: lighter; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Task</h3>
+        <label for="task"></label>
+        <input type="text" name="task" id="task" value>
+        <button type="submit" class="button">Create Task</button>
+    </form>
+    <table >
+        <tr>
+            <th>Task</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <!-- using foreach to get each n every document from db. -->
+        <% tasks.forEach((task)=>{%>
+        <tr>
+            <td><%= task.task%></td>
+            <td><a href="/task/<%=task._id%>"><i class="fas fa-edit"></i></a></td>
+            <td><form action="/task/<%=task._id%>?_method=Delete" method="post"><button type="submit" class="del_btn"><i class="gg-trash"></i></button></form>
+            </td>
+        </tr>
+    <%})%>
+    </table>
+</body>
+</html>

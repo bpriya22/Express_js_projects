@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../public/css/style.css"> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    
+    <form action="/task/<%=task._id%>?_method=PUT" method="post" class="form">
+        <h1>Update task</h1>
+        <label for="task">Task</label>
+        <input type="text" name="task" id="task" value="<%= task.task %>">
+        <button type="submit">Update task</button>
+    </form>
+</body>
+</html>
